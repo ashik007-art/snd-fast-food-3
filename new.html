@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SND Fast Food Center - Ravulapalem</title>
+<script></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{ background:#fffaf2; color:#333; }
+
+header{
+background:linear-gradient(rgba(31,29,29,0.6),rgba(52,42,42,0.6)),
+url('combined.png');
+background-size:cover;
+background-position:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+header h1{
+font-size:60px;
+}
+
+header p{
+font-size:22px;
+margin:15px 0;
+}
+    
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ff6b00;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+    box-shadow:0 8px 20px rgba(255,107,0,.35);
+}
+
+.btn:hover{
+    background:#ff8533;
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(255,107,0,.45);
+}
+
+section{
+padding:70px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    color:#ff6b00;
+    margin-bottom:50px;
+    font-weight:700;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+color:#d84315;
+}
+
+.card p{
+padding:0 15px 20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+th{
+background:#ff5722;
+color:white;
+padding:15px;
+}
+
+td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#fff3e0;
+}
+
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+.contact{
+    display:flex;
+    align-items:center;
+    background:black;
+    color:white;
+    border-radius:15px;
+    overflow:hidden;
+    padding:0;
+}
+
+.contact-logo{
+    width:300px;
+    min-width:300px;
+    background:black;
+}
+
+.contact-logo img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain;
+}
+
+.contact-info{
+    flex:1;
+    padding:40px;
+}
+
+.contact-info h2{
+    color:#ff5722;
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.contact-info h3{
+    margin:15px 0;
+}
+.navbar{
+   position:fixed;
+   top:0;
+   width:100%;
+   z-index:1000;
+}
+.shop-photo{
+    width:100%;
+    margin-top:20px;
+}
+
+.shop-photo img{
+    width:100%;
+    max-width:1200px;
+    display:block;
+    margin:auto;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media screen and (max-width:768px){
+
+header{
+    height:70vh;
+    padding:20px;
+}
+
+header h1{
+    font-size:38px;
+}
+
+header p{
+    font-size:18px;
+}
+
+.btn{
+    padding:12px 25px;
+    font-size:16px;
+}
+
+section{
+    padding:40px 5%;
+}
+
+.title{
+    font-size:28px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.contact{
+    flex-direction:column;
+    text-align:center;
+}
+
+.contact-logo{
+    width:180px;
+    min-width:180px;
+    margin:20px auto;
+}
+
+.contact-info{
+    padding:20px;
+    text-align:center !important;
+}
+
+.contact-info p{
+    font-size:16px;
+}
+
+table{
+    font-size:14px;
+}
+
+th,td{
+    padding:10px;
+}
+
+.shop-photo img{
+    width:100%;
+}
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.card,
+.gallery img,
+.contact,
+.shop-photo{
+
+animation:fadeUp .8s ease;
+
+}
+}
+/* ===========================
+   PREMIUM ANIMATIONS
+=========================== */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* HEADER */
+
+header h1{
+    animation:fadeDown 1s ease;
+}
+
+header p{
+    animation:fadeUp 1.3s ease;
+}
+
+header .btn{
+    animation:zoomIn 1.8s ease;
+}
+
+/* ALL TEXT */
+
+h1,h2,h3,p,td,th{
+    animation:fadeUp 1s ease;
+}
+
+/* TITLES */
+
+.title{
+    animation:fadeUp 1s ease;
+}
+
+/* CARDS */
+
+@keyframes cardRightToLeft{
+    from{
+        opacity:0;
+        transform:translateX(150px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    opacity:0;
+    animation:cardRightToLeft .8s ease forwards;
+}
+
+.card:nth-child(1){animation-delay:.2s;}
+.card:nth-child(2){animation-delay:.4s;}
+.card:nth-child(3){animation-delay:.6s;}
+.card:nth-child(4){animation-delay:.8s;}
+.card:nth-child(5){animation-delay:1s;}
+.card:nth-child(6){animation-delay:1.2s;}
+
+.card img{
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+}
+
+/* TABLE */
+
+table{
+    animation:fadeUp 1s ease;
+}
+
+tr{
+    transition:.4s;
+}
+
+tr:hover{
+    transform:scale(1.01);
+}
+
+/* GALLERY */
+
+
+.gallery-card img:hover{
+    transform:scale(1.08) rotate(2deg);
+}
+
+/* CONTACT */
+
+.contact-logo{
+    animation:fadeLeft 1.2s ease;
+}
+
+.contact-info{
+    animation:fadeRight 1.2s ease;
+}
+
+.contact-logo img{
+    animation:float 3s infinite ease-in-out;
+}
+
+/* SHOP IMAGE */
+
+.shop-photo img{
+    animation:zoomIn 1.2s ease;
+    transition:.5s;
+}
+
+.shop-photo img:hover{
+    transform:scale(1.03);
+}
+
+/* BUTTON */
+
+.btn{
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+/* ===== PROFESSIONAL EFFECTS ===== */
+
+body{
+overflow-x:hidden;
+}
+
+/* Glass Navbar */
+.navbar{
+backdrop-filter:blur(15px);
+background:rgba(0,0,0,.45);
+transition:.4s;
+}
+
+/* Hero Background Zoom */
+header{
+animation:bgZoom 12s infinite alternate;
+}
+
+@keyframes bgZoom{
+0%{
+background-size:100%;
+}
+100%{
+background-size:110%;
+}
+}
+
+/* Text Glow */
+header h1{
+text-shadow:
+0 0 10px #ff6b00,
+0 0 25px #ff6b00,
+0 0 50px #ff6b00;
+}
+
+section{
+opacity:0;
+transform:translateY(70px);
+transition:1s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Card Shine */
+.card{
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+top:-120%;
+left:-40%;
+width:40%;
+height:250%;
+background:rgba(255,255,255,.35);
+transform:rotate(25deg);
+transition:.8s;
+}
+
+.card:hover::before{
+left:130%;
+}
+
+/* Premium Hover */
+.card{
+transition:.5s;
+}
+
+.card:hover{
+transform:
+translateY(-15px)
+scale(1.04);
+box-shadow:
+0 20px 50px rgba(0,0,0,.25);
+}
+
+/* Button Pulse */
+.btn{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+box-shadow:0 0 0 0 rgba(255,107,0,.6);
+}
+
+70%{
+box-shadow:0 0 0 18px rgba(255,107,0,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(255,107,0,0);
+}
+
+}
+
+
+.contact{
+transition:.6s;
+}
+
+.contact:hover{
+transform:scale(1.02);
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.gallery{
+    width:100%;
+    overflow:hidden;
+    padding:20px 0;
+    white-space:nowrap;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap:20px;
+  animation: scrollLeft 35s linear infinite;
+}
+
+.gallery-card{
+    flex:0 0 auto;
+    width:250px;
+    margin:0 10px;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes scrollLeft{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-1560px);
+}
+
+}
+/* pause on hover (optional) */
+.gallery:hover .track {
+  animation-play-state:running;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div>
+<h1> SND Fast Food Center</h1>
+<p>Ravulapalem</p>
+<a href="#menu" class="btn">View Menu</a>
+</div>
+
+</header>
+
+
+<section>
+
+<h2 class="title">Our Special Items</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">
+<h3>🍗 Chicken Fried Rice</h3>
+<p>Half ₹80 | Full ₹120</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+<h3>🥚 Egg Fried Rice</h3>
+<p>Half ₹60 | ₹Full 80</p>
+</div>
+
+<div class="card">
+<img src="friedrice.png">
+<h3>🥬 Veg Fried Rice</h3>
+<p>Half ₹60 | Full ₹80</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80">
+<h3>🍜 Chicken Noodles</h3>
+<p>Half ₹80 | Full ₹120</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+<h3>🥚 Egg Noodles</h3>
+<p>Half ₹60 | Full ₹80</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+<h3>🥬 Veg Noodles</h3>
+<p>Half ₹60 | Full ₹80</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="menu">
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Half</th>
+<th>Full</th>
+</tr>
+
+<tr>
+<td>🍗 Chicken Fried Rice</td>
+<td>₹80</td>
+<td>₹120</td>
+</tr>
+
+<tr>
+<td>🥚 Egg Fried Rice</td>
+<td>₹60</td>
+<td>₹80</td>
+</tr>
+
+<tr>
+<td>🥬 Veg Fried Rice</td>
+<td>₹60</td>
+<td>₹80</td>
+</tr>
+
+<tr>
+<td>🍜 Chicken Noodles</td>
+<td>₹80</td>
+<td>₹120</td>
+</tr>
+
+<tr>
+<td>🥚 Egg Noodles</td>
+<td>₹60</td>
+<td>₹80</td>
+</tr>
+
+<tr>
+<td>🥬 Veg Noodles</td>
+<td>₹60</td>
+<td>₹80</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2 class="title">Food Gallery</h2>
+
+<div class="gallery">
+    <div class="track">
+
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">   
+            
+            </div>
+
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+           
+            </div>
+        <div class="gallery-card"><img src="friedrice.png">
+            
+            </div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80"></div>
+        
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+       
+    </div>   
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+    
+    </div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80">   
+            
+        </div>
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80">
+       
+        </div>
+        <div class="gallery-card"><img src="friedrice.png">
+            
+         </div>   
+        <div class="gallery-card"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=80">
+       
+        </div>
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=800&q=80">
+        
+    </div>
+    <div class="gallery-card"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80">
+   
+    </div>
+    </div>
+</div>
+
+</section>
+
+<section>
+
+<div class="contact">
+
+    <div class="contact-logo">
+        <img src="logo.png" alt="SND Logo">
+    </div>
+
+    <div class="contact-info" align="right">
+        <h2>SND Fast Food Center</h2>
+        <p>📍 beside Sri Krishna Residency</p>
+        <p>📍 RAVULAPALEM</p>
+        <p>📞 9666748888</p>
+        <h3>Fresh • Tasty • Hygienic</h3>
+        <p>Open Every Day</p>
+    </div>
+
+</div>
+
+</section>
+
+<section id="location">
+
+    <h2 class="title">Our Location</h2>
+
+ <div class="shop-photo">
+        <img src="address.jpeg" alt="SND Fast Food Center">
+    </div>
+
+</section>
+<footer>
+
+© 2026 SND Fast Food Center | Ravulapalem
+
+</footer>
+
+</body>
+</html>
+<script>
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:.15});
+
+document.querySelectorAll("section").forEach(sec=>{
+
+observer.observe(sec);
+
+});
+
+</script>
